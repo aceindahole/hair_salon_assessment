@@ -36,4 +36,6 @@ class Stylist
     found_stylist
   end
 
+
+
 end
