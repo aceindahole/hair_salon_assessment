@@ -16,6 +16,21 @@ describe(Client) do
     end
   end
 
-  # describe("")
+  describe("#client_name") do
+    it("displays the called upon client's name") do
+      test_client = Client.new({:client_name => "Dale", :id => 1, :stylist_id => 1})
+      test_client.save()
+      expect(test_client.client_name()).to(eq("Dale"))
+    end
+  end
+
+  describe("#stylist_id") do
+    it("displays the connected stylist id of the current client") do
+      test_client = Client.new({:client_name => "Dale", :id => 1, :stylist_id => 1})
+      test_client.save()
+      expect(test_client.stylist_id()).to(eq(1))
+    end
+  end
+
 
 end
