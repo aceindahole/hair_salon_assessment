@@ -53,5 +53,8 @@ describe(Stylist) do
       expect(test_stylist1.clients()).to(eq([test_client1, test_client2]))
     end
   end
-      # I am having a hard time understanding why the above spec works when I pull 'test_stylist1.id()' with my method, but it doesn't work when I put in the number 1 for stylist_id. They are the exact same variable, no?
+# I am having a hard time understanding why the above spec works when I pull 'test_stylist1.id()' with my method, but it doesn't work when I put in the number 1 for stylist_id. They are the exact same variable, no?
+
+  
+
 end

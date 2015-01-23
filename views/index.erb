@@ -1,0 +1,22 @@
+<h1>Tyler's Terrific Hair Treatment</h1>
+
+<h3>Add a Stylist who works here!</h3>
+
+<form action="/stylist" method="post">
+  <label for="stylist_name">Hire a Stylist:</label>
+  <input id="stylist_name" name="stylist_name" type="text">
+
+  <button type="submit">Give this person a job!</button>
+</form>
+
+<% if @stylists.any?() %>
+<p>Click on a Stylist to see their cleints - </p>
+
+<ul>
+  <% @stylists.each do |stylist| %>
+  <li><a href="/stylist/<%= stylist.id() %>"><%= stylist.stylist_name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>Looks like folks can't get a haircut here...</p>
+<% end %>
