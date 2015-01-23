@@ -24,4 +24,22 @@ describe(Stylist) do
     end
   end
 
+  describe("#id") do
+    it("tells you the id tied to the called upon stylist") do
+      test_stylist = Stylist.new({:stylist_name => "Tyler", :id => 1})
+      test_stylist.save()
+      expect(test_stylist.id()).to(be_an_instance_of(Fixnum))
+    end
+  end
+
+  describe(".find") do
+    it("returns a stylist by their given id number") do
+      test_stylist1 = Stylist.new({:stylist_name => "Tyler", :id => 1})
+      test_stylist1.save()
+      test_stylist2 = Stylist.new({:stylist_name => "Sean", :id => 2})
+      test_stylist2.save()
+      expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
+    end
+  end
+
 end
