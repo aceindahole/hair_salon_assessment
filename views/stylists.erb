@@ -1,4 +1,4 @@
-<h1>Add a client name to <%= @stylist.name() %>'s record</h1>
+<h1>Add a client name to <%= @stylist.stylist_name() %>'s record</h1>
 
 <form action="/clients" method="post">
   <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">

@@ -41,9 +41,8 @@ class Stylist
     test_clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id()};")
     test_clients.each() do |client|
       client_name = client.fetch("client_name")
-      id = client.fetch("id").to_i()
       stylist_id = client.fetch("stylist_id").to_i()
-      list_clients.push(Client.new({:client_name => client_name, :id => id, :stylist_id => stylist_id}))
+      list_clients.push(Client.new({:client_name => client_name, :stylist_id => stylist_id}))
     end
     list_clients
   end
